@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/Rtt.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in</title>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Main</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="file:///C:/Users/20270/Desktop/Html%20Client/Posts.html">Posts</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" href="file:///C:/Users/20270/Desktop/Html%20Client/Coment.html">Comment</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link active" href="#">Users</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Posts</a>
+          </li>
+      </ul>
+
+      <p class="mb-0"><a href="file:///C:/Users/20270/Desktop/Html%20Client/log_in.html" class="alert-link link-dark">Log in</a> | <a href="file:///C:/Users/20270/Desktop/Html%20Client/sign_in.html" class="alert-link link-dark">Sign in</a> </p>
+      </div>
+    </div>
+  </nav>
+  <% if (locals.success) { %>
+    <p>Спасибо! Мы ответим вам на email: <%= data.email %></p>
+<% } else { %>
+  <% if (locals.data) { %>
+    <p>Не все поля заполнены!</p>
+<% } %>
+
+  <div class="ye">
+    <div class="col-6 offset-3">
+      <form method="post" action="/index">
+        
+        <div class="mb-3">
+          <label for="exampleInputname1" class="form-label">Ф.И.О</label>
+          <input type="name" name="name" value="<%= (locals.data ? data.name : '') %>" class="form-control">
+          <div id="name" class="form-text">Имя будет указываться везде.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" value="<%= (locals.data ? data.email : '') %>" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="email" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputMes1" class="form-label">Сообщение которое хотите отправить</label>
+          <input type="mes" value="<%= (locals.data ? data.mes : '') %>" name="mes" class="form-control" id="exampleInputMes1">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" name="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" type="anon" value="<%= (locals.data ? data.anon : '') %>"  for="exampleCheck1">Поставьте галочку чтобы отправить анонимно</label>
+        </div>
+
+        <div class="FL">
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="alert alert-light" role="alert">
+           <p> If you already registed, folow this link: <a href="file:///C:/Users/20270/Desktop/Html/Log_in.html"
+              class="alert-link">Log in</a>.</p>
+          </div>
+        </div>
+    </div>
+<%  }  %>
+
+    </form>
+  </div>
+
+  <%- include('partials/footer.ejs') %>
+</body>
+
+</html>

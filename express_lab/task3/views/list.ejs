@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+    <style>
+        .container {
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .card {
+            border: 1px solid black;
+            padding: 2px 8px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Список сообщений</h1>
+    <% contacts.forEach((contact) => { %>
+        <div class="card">
+            <p><strong>Email:</strong> <%= contact.email %></p>
+            <p><strong>Имя:</strong> <%= contact.name %></p>
+            <p><strong>Сообщение:</strong> <%= contact.mes %></p>
+            <p><strong>Дата добавления:</strong> <%= contact.createdAt %></p>
+        </div>
+    <% }) %>
+</div>
+
+<%- include('partials/footer.ejs') %>
+
+</body>
+</html>

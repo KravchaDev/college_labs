@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Контакты</title>
+</head>
+<body>
+<% if (locals.success) { %>
+    <p>Спасибо <%= data.firstname %>! Мы ответим вам на email: <%= data.email %></p>
+<% } else { %>
+    <% if (locals.data) { %>
+        <p>Не все поля заполнены!</p>
+    <% } %>
+    <form method="post" action="/contact">
+        <input type="email" name="email" value="<%= (locals.data ? data.email : '') %>" placeholder="Email"><br>
+        <input type="text" name="firstname" value="<%= (locals.data ? data.firstname : '') %>" placeholder="Имя"><br>
+        <input type="text" name="lastname" value="<%= (locals.data ? data.lastname : '') %>" placeholder="Фамилия"><br>
+        <textarea name="message" rows="8" cols="80"><%= (locals.data ? data.message : '') %></textarea><br>
+        <input type="submit" value="Отправить">
+    </form>
+<% } %>
+<%- include('partials/footer.ejs') %>
+</body>
+</html>
+

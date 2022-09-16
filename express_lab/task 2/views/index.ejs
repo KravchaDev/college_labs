@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>тестирование шаблонизаторов</title>
+</head>
+<body>
+<% for(let i = 0; i < users.length; i++) { %>
+    <% if (users[i] !== "Иван") { %>
+        <div><%= users[i] %></div>
+    <% } %>
+<% } %>
+<% if (value === 5) { %>
+    <h1>число равно пять</h1>
+<% } else { %>
+    <p>число не равно пять</p>
+<% } %>
+</body>
+</html>

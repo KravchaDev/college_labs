@@ -63,3 +63,38 @@ db.products.insertOne({
   })
 
 ```
+
+**2.2 Многочисленное добавление**
+
+Выполните предыдущее задания, но вместо добавления данных по одному объекту, добавьте сразу все объекты при помощи лишь
+одной команды.
+
+#### Решение:
+
+```javascript
+db.products.insertMany([
+  { name:'Iphone 13',
+    price:85000,
+    brand:'Apple',
+    memory:'512 кб',
+    accessories:["стекло"]
+  }
+ {
+    name:'Acer Aspire XC-1660',
+    price:34500,
+    processor:'Intel Core i3 10105',
+    property:{weight:'5kg'},
+    brand:'Acer',
+    memory:'8 ГБ',
+    available:true
+  }
+ {
+    name:'Hisense 55A85H',
+    price:149999,
+    brand:'Hisense',
+    diagonal:'138.8см',
+    available:true
+ }
+  ])
+```
+

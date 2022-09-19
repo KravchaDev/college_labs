@@ -98,3 +98,48 @@ db.products.insertMany([
   ])
 ```
 
+____
+
+### 3. Выборка данных из коллекции
+
+Создайте коллекцию **articles** и заполните её такими полями, как: заголовок, анонс, текст статьи, автор, количество
+просмотров.
+
+Выведите все данные из коллекции **articles**. Произведите следующие операции:
+
+1. Выведите лишь один объект;
+2. Выполните сортировку по количеству просмотров (*по убыванию*);
+3. Выведите все статьи, у которых автор Админ и просмотры равны **720**;
+4. Выведите все статьи, у которых от 20 до 500 просмотров;
+5. Выведите статьи, у которых автор не Админ и не Джери.
+
+#### Решение:
+
+```javascript
+// Создание коллекции
+db.createCollection('articles')
+db.articles.insertMany([
+  {title:'Заголовок',content:'text',author:'Админ',views:720,anounce:'....'},
+  {title:'Title',content:'textText',author:'Анна',views:720,announce:'......'},
+  {title:'Заголовок',content:'textTexttextTexttextText',author:'Jam',views:108,announce:'.......'},
+  {title:'Title',content:'textTexttextTexttextText',author:'Pol',views:80,announce:'.......'},
+  {title:'Title',content:'textTexttextTexttextTexttextTexttextText',author:'Tom',views:30,anounce:'.......'},
+  {title:'Заголовок',content:'textText',author:'Джери',views:789,announce:'....'},
+  ])
+// Вывод лишь одного объекта
+db.articles.findOne()
+
+// Сортировка по просмотрам
+db.articles.find().sort({views:-1})
+
+// Статьи от автора Админ
+db.articles.find({author:'Томас',views:720})
+
+// Статьи от 20 до 500 просмотров
+db.articles.find({views:{$gt: 20,$lt:500}})
+
+// Автор не Админ и не Джери
+db.articles.find({author:{$nin:['Админ ', 'Джери']}})
+
+
+```

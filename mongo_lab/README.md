@@ -224,3 +224,35 @@ db.tovars.bulkWrite([
 ])
 
 ```
+____
+
+### 6. Поиск на совпадение в тексте
+
+Создайте коллекцию **products**. Пропишите в ней поля: название, цена, описание.
+
+Выполните индексирование для полей: название, описание.
+
+Выполните поиск в этой коллекции по слову «телефон».`
+
+#### Решение:
+
+```javascript
+// Добавление записей в новую коллекцию
+
+db.products2.insertOne({name:'phone',price:"",description:""})
+db.products2.insertOne({name:'comp',price:"",description:""})
+db.products2.insertOne({name:'tablet',price:"",description:""})
+db.products2.insertOne({name:'laptop',price:"",description:""})
+
+// Создание индексов для отслеживания
+
+db.products2.createIndex({name:"text",description:"text"})
+
+// Поиск данных по конкретному слову
+db.products2.find({$text:{$search:"phone"}})
+
+
+
+```
+
+____

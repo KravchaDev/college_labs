@@ -185,3 +185,42 @@ db.articles.replaceOne(
 
 
 ```
+
+____
+
+### 5. Объединение запросов в БД
+
+Создайте **bulkWrite**, который будет выполнять несколько команд:
+
+1. Обновите запись, где поле tovar не равно computer. Установите новое значение для поля товара;
+2. Добавьте новый товар с полями: товар и цена.
+3. Удалите объект, у которого поле товар равно "*стекло*".
+
+#### Решение:
+
+```javascript
+db.tovars.insertMany([
+  {tovar:'phone',price:10000},
+  {tovar:"glass",price:1000},
+  {tovar:'computer',price:30000}
+])
+db.tovars.bulkWrite([
+  {
+    updateOne:{
+      filter:{tovar:{$ne:"computer"}},
+      update: {$set: {tovar: "new"}}
+    }
+  },
+  {
+    insertOne : {
+      "document": {tovar: "", price:''}
+    }
+  },
+  {
+    deleteOne : {
+      filter: {tovar:"glass"}
+    }
+  },
+])
+
+```

@@ -1,0 +1,10 @@
+/* Обычный */
+@font-face {
+    font-family: 'Oks Free';
+    src: url(../fonts/OksFree0013.otf) format("opentype");
+}
+
+p {
+    font-family: "Oks Free";
+    font-size: 20px;
+}

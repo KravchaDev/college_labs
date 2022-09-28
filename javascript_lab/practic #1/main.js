@@ -1,6 +1,6 @@
 window.onload = function () {// Выполнить js после загрузки объекта документа
 
-    // Определяем переменные документа
+    //Определяем переменные документа
     //COMPLETE VARIABLE AND FUNCTION DEFINITIONS
     var customName = document.getElementById('customname');
     console.log(customName.value);
@@ -9,20 +9,18 @@ window.onload = function () {// Выполнить js после загрузк�
     console.log(document.querySelector('.randomize'));
     var story = document.querySelector('.story');
 
-    // Определяем функцию для возврата случайных элементов в массиве
+    //Определяем функцию для возврата случайных элементов в массиве
     function randomValueFromArray(array) {
         return array[Math.floor(Math.random() * array.length)];
     }
 
-    // Определяем строку в истории
-    //RAW TEXT STRINGS
+    //Определяем строку в истории
     var storyText = 'It was 94 farenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.';
     var insertX = ['Willy the Goblin', 'Big Daddy', 'Father Christmas'];
     var insertY = ['the soup kitchen', 'Disneyland', 'the White House'];
     var insertZ = ['turned into a slug and crawled away', 'spontaneously combusted', 'melted into a puddle on the sidewalk'];
 
-    // Слушатель событий и основная функция
-    //EVENT LISTENER AND PARTIAL FUNCTION DEFINITION
+    //Слушатель событий и основная функция
     randomize.addEventListener('click', result);
 
     function result() {
@@ -36,12 +34,12 @@ window.onload = function () {// Выполнить js после загрузк�
         newStory = newStory.replace(':inserty:', yItem);
         newStory = newStory.replace(':insertz:', zItem);
 
-        // Проверить, если вход пуст, заменить имя
+        //Проверить, если вход пуст, заменить имя
         if (customName.value != '') {
             var name = customName.value;
             newStory = newStory.replace('Bob', name);
         }
-        // Проверьте, выбран ли Великобритания, и замените температуру и вес.
+        //Проверьте, выбран ли Великобритания, и замените температуру и вес.
         if (document.getElementById('uk').checked) {
             var weight = Math.round(300 * 0.0714286) + ' stone';
             var temperature = Math.round((94 - 32) / 1.8) + ' centigrade';
@@ -49,9 +47,8 @@ window.onload = function () {// Выполнить js после загрузк�
             newStory = newStory.replace('300 pounds', weight);
 
         }
-        // Генерируем случайные истории
+        //Генерируем случайные истории
         story.textContent = newStory;
         story.style.visibility = 'visible';
-
     }
 }

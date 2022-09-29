@@ -2,7 +2,6 @@
 #include <math.h>
 
 int main() {
-
     float a, b, n;
     printf("Vvedite znachenie a i b: ");
     scanf_s("%f%f", &a, &b);
@@ -13,7 +12,6 @@ int main() {
         printf("\n a = %.0f", n);
         printf("\n b = %.0f", n);
     }
-
     else
     {
         a = 0;

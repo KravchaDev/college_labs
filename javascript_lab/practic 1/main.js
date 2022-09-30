@@ -1,7 +1,6 @@
 window.onload = function () {// Выполнить js после загрузки объекта документа
 
     //Определяем переменные документа
-    //COMPLETE VARIABLE AND FUNCTION DEFINITIONS
     var customName = document.getElementById('customname');
     console.log(customName.value);
     var randomize = document.querySelector('.randomize');

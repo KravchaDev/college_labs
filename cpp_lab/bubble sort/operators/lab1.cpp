@@ -1,10 +1,10 @@
-⦁	#include <stdio.h>
+#include <stdio.h>
 #include <math.h>
 
 int main() {
     float a, b, n;
     printf("Vvedite znachenie a i b: ");
-    scanf_s("%f%f", &a, &b);
+    scanf("%f%f", &a, &b);
     if (a != b)
     {
         n = a + b;

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<title>ToDo List</title>
+    <!-- подключаем Vue.js -->
+		<script src="https://unpkg.com/vue@2"></script>
+    <!-- подключаем стили -->
+		<link rel="stylesheet" href="style.css" />
+    <!-- подключаем фавикон -->
+		<link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" />
+		
+	</head>
+
+	<body>
+		<!-- основной блок, внутри которого будет всё остальное -->
+		<div id="demo">
+			<h3>ToDo APP</h3>
+
+			<form id="add">
+				<p>НОВАЯ ЗАДАЧА</p>
+				<!-- поле вводе -->
+				<input name="newlabel" v-model="newLabel" />
+				<button @click="add" id="addbutton">ДОБАВИТЬ ЗАДАЧУ</button>
+			</form>
+			<!-- управление колесом баланса -->
+
+			<h4>CПИСОК ЗАДАЧ</h4>
+			<hr />
+			<div v-for="stat in stats" class="list">
+				<!-- выводим название элемента -->
+				<label>{{stat.label}}</label>
+				<!-- выводим текущее значение элемента -->
+				<span>{{stat.value}}</span>
+				<!-- кнопка для удаления элемента -->
+				<button @click="remove(stat)" class="remove">удалить</button>
+			</div>
+		</div>
+
+		<!-- основной скрипт -->
+		<script src="vue.js"></script>
+	</body>
+</html>

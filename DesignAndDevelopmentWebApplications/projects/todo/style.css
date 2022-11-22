@@ -1,0 +1,102 @@
+@font-face {
+    font-family: Oks;
+    src: url("assets/oks.otf") format("opentype");
+}
+@font-face {
+    font-family: Miratrix;
+    src: url("assets/miratrix.otf") format("opentype");
+}
+body {
+    font-family: Helvetica Neue, Arial, sans-serif;
+    padding: 250px;
+    margin: 0 auto;
+    height: 300px;
+    width: 500px;
+    background-color: #1C1E22;
+    border-radius: 3px;
+    color : #ffff 
+}
+#demo {
+    padding: 30px;
+    background-color: #27292D;
+}
+h3{
+    font-family: Oks;
+    font-size: 35px;
+    text-align: center;
+}
+h4{
+    font-family: Miratrix;
+    font-weight: 70;
+    margin-left: 16px;
+}
+p{
+    font-family: Miratrix;
+    font-weight: 70;
+    font-size: 16px;
+}
+text {
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-size: 10px;
+    fill: rgb(255, 255, 255);
+}
+label {
+    font-family: Miratrix;
+    font-weight: 70;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    width: 200px;
+}
+input {
+    color: aliceblue;
+    width: 90% ;
+    height: 30px;
+    border: 1.5px solid #727476;
+    border-radius: 5px;
+    background: #27292D;
+}
+button{
+    background: #A0A4D9;
+    color: #27292D;
+}
+hr {
+    color: #727476;
+    width: 92%;
+    margin-bottom: 15px;
+    border: 0.1px solid #727476;
+}
+#add {
+    margin-left: 16px;
+    width: 100%;
+}
+#addbutton {
+    font-family: Miratrix;
+    font-weight: 70;
+    font-size: 14px;
+    margin: 0 auto;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 12.1px;
+    width: 92%;
+}
+.list{
+    width: 92% ;
+    margin: 0 auto;
+    border: 1.5px solid #727476;
+    border-radius: 5px;
+    margin-top: 7px;
+}
+.remove {
+    font-family: Miratrix;
+    font-weight: 70;
+    font-size: 12px;
+    border: none;
+    height: 22px;
+    width: 65px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 115px;
+}
